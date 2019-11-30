@@ -54,4 +54,18 @@ public class Manager {
 		}
 	}
 
+	// Pokusaj da iskoristim scanner u drugoj klasi
+//	public void validacijaRacuna(int brojRacuna) {
+//		while (brojRacuna < 1 || daLiRacunPostoji(brojRacuna)) {
+//			Atm atm = new Atm();
+//			if (brojRacuna < 1) {
+//				System.out.println("Broj racuna ne moze biti negativan broj ili nula! Pokusajte ponovo: ");
+//				brojRacuna = atm.input.nextInt();
+//			} else {
+//				System.out.println("Broj racuna vec postoji! Pokusajte ponovo: ");
+//				brojRacuna = input.nextInt();
+//			}
+//		}
+//	}
+
 }

@@ -6,6 +6,7 @@ public class Atm {
 		Scanner input = new Scanner(System.in);
 		Manager manager = new Manager();
 		boolean running = true;
+		int unos = 0;
 
 		while (running) {
 			System.out.println("______________________________________________________"
@@ -18,6 +19,9 @@ public class Atm {
 			switch (izbor) {
 			// Kreiranje racuna (izbor 1)
 			case 1:
+				System.out.println("Kreiranje racuna potvrdite unosom broja 1, za izlaz unesite broj 2: ");
+				unos = input.nextInt();
+				if(unos == 1) {
 				System.out.println("Unesite broj racuna: ");
 				int brojRacuna = input.nextInt();
 				while (brojRacuna < 1 || !manager.daLiRacunPostoji(brojRacuna)) {
@@ -40,9 +44,14 @@ public class Atm {
 				}
 				manager.napraviRacun(brojRacuna, imeVlasnikaRacuna, iznosNaRacunu);
 				break;
+				}
+				else break;
 			// transfer novca
 			case 2:
 				int sourceIndex = 0;
+				System.out.println("Transfer novca potvrdite unosom broja 1, za izlaz unesite broj 2: ");
+				unos = input.nextInt();
+				if(unos == 1 ) {
 				System.out.println("Unesite racun sa kojeg zelite da prebacite racun: ");
 				int sourceAccount = input.nextInt();
 				while (manager.daLiRacunPostoji(sourceAccount)) {
@@ -68,6 +77,8 @@ public class Atm {
 				}
 				manager.transferNovca(sourceAccount, targetAccount, iznosNovca);
 				break;
+				}
+				else break;
 
 			// Detalji postojecih racuna
 			case 3:
@@ -84,5 +95,4 @@ public class Atm {
 		}
 		input.close();
 	}
-
 }
